@@ -1,0 +1,28 @@
+{
+    "name": "@plcmp/pl-labeled-container",
+    "version": "0.0.1",
+    "description": "Container for inputs and texts with label.",
+    "main": "pl-labeled-container.js",
+    "repository": {
+        "url": "https://github.com/plcmp/pl-labeled-container.git"
+    },
+    "license": "MIT",
+    "type": "module",
+    "author": {
+        "name": "Azat Yamalov",
+        "email": "yamalov.azat@live.com"
+    },
+    "contributors": [
+        {
+            "name": "Dmitry Boikov",
+            "email": "boikovdv@gmail.com"
+        },
+        {
+            "name": "Andrey Maksimov",
+            "email": "andrmaxmail@gmail.com"
+        }
+    ],
+    "dependencies": {
+        "polylib": "^1.0.0"
+    }
+}
