@@ -24,6 +24,7 @@ class PlLabeledContainer extends PlElement {
 
 			:host([variant=horizontal]) {
                 flex-direction: row;
+				align-items: center;
             }
 
 			:host([variant=horizontal]) label{
@@ -70,16 +71,8 @@ class PlLabeledContainer extends PlElement {
                 font-weight: 500;
             }
 
-            :host([variant=horizontal]) ::slotted() {
-                padding-top: 6px;
-            }
-
-            ::slotted() {
-                width: auto;
-                min-height: 32px;
-                font-size: 13px;
-                line-height: 16px;
-				font: var(--font-md);
+            :host([variant=horizontal])  > ::slotted(*) {
+                align-self: flex-start;
             }
     	`;
     }
