@@ -5,7 +5,7 @@ class PlLabeledContainer extends PlElement {
         return {
             disabled: { type: Boolean, reflectToAttribute: true },
             label: { type: String },
-            variant: { type: String, reflectToAttribute: true }
+            variant: { type: String, reflectToAttribute: true, value: 'vertical' }
         };
     }
 
@@ -22,47 +22,16 @@ class PlLabeledContainer extends PlElement {
                 flex-shrink: 0;
 			}
 
-			:host([variant=horizontal]) {
-                flex-direction: row;
-				align-items: center;
-            }
-
-			:host([variant=horizontal]) label{
-                width: var(--label-width, 140px);
-                align-self: self-start;
-                min-height: 32px;
-            }
-
-            :host([variant=horizontal]) label span{ 
-                align-self: center;
-            }
-
-            :host([variant=vertical]) label{
-				width: var(--content-width, 140px);
-            }
- 
-            :host([variant=vertical]) label span{
-				width: var(--content-width, 140px);
-                padding-bottom: 4px;
-                text-align: initial;
-            }
-
-            label[hidden] {
-                display: none;
-            }
-
-			label {
+            label {
                 box-sizing: border-box;
-                display: inline-flex;
-                pointer-events: none;
+                display: flex;
                 user-select: none;
 				font: var(--font-sm);
 				color: var(--black-darkest);
-                overflow:hidden;
                 flex-shrink: 0;
             }
 
-            label > span:empty {
+            label[hidden] {
                 display: none;
             }
 
@@ -71,15 +40,51 @@ class PlLabeledContainer extends PlElement {
                 font-weight: 500;
             }
 
-            :host([variant=horizontal])  > ::slotted(*) {
-                align-self: flex-start;
+			:host([variant=horizontal]) {
+                flex-direction: row;
+            }
+
+            :host([variant=horizontal]) > ::slotted(*) {
+                min-height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+			:host([variant=horizontal]) label{
+                width: var(--label-width, 140px);
+                min-height: 32px;
+            }
+
+            :host([variant=horizontal]) label span{ 
+                align-self: center;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            :host([variant=vertical]) {
+                gap: 4px;
+            }
+
+            :host([variant=vertical]) label span{
+				width: var(--content-width, 140px);
+                overflow: hidden;
+            }
+
+            :host([variant=vertical]) > ::slotted(*) {
+                align-self: flex-start !important;
             }
     	`;
     }
 
     static get template() {
         return html`
-            <label hidden$="[[!label]]">
+            <label title$="[[label]]" hidden$="[[!label]]">
                 <slot name="label-prefix"></slot>
                 <span>[[label]]</span>
                 <slot name="label-suffix"></slot>
