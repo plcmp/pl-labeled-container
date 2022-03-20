@@ -18,7 +18,7 @@ class PlLabeledContainer extends PlElement {
 				direction: var(--direction);
 				align-items: flex-start;
 				outline: none;
-                min-height: 32px;
+                min-height: var(--base-size-md);
                 flex-shrink: 0;
 			}
 
@@ -26,8 +26,8 @@ class PlLabeledContainer extends PlElement {
                 box-sizing: border-box;
                 display: flex;
                 user-select: none;
-				font: var(--font-sm);
-				color: var(--black-darkest);
+                font: var(--header-font);
+                color: var(--header-color);
                 flex-shrink: 0;
             }
 
@@ -37,7 +37,6 @@ class PlLabeledContainer extends PlElement {
 
             label span {
                 width: 100%;
-                font-weight: 500;
             }
 
 			:host([variant=horizontal]) {
@@ -45,15 +44,15 @@ class PlLabeledContainer extends PlElement {
             }
 
             :host([variant=horizontal]) > ::slotted(*) {
-                min-height: 32px;
+                min-height: var(--base-size-md);
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
 
 			:host([variant=horizontal]) label{
-                width: var(--label-width, 140px);
-                min-height: 32px;
+                width: var(--label-width, 240px);
+                min-height: var(--base-size-md);
             }
 
             :host([variant=horizontal]) label span{ 
@@ -68,11 +67,11 @@ class PlLabeledContainer extends PlElement {
             }
 
             :host([variant=vertical]) {
-                gap: 4px;
+                gap: var(--space-xs);
             }
 
             :host([variant=vertical]) label span{
-				width: var(--content-width, 140px);
+				width: var(--content-width, 240px);
                 overflow: hidden;
             }
 
