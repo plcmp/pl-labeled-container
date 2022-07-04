@@ -21,7 +21,7 @@ class PlLabeledContainer extends PlElement {
 				outline: none;
                 min-height: var(--base-size-md);
                 flex-shrink: 0;
-                width: var(--content-width);
+                width: auto;
                 row-gap: var(--space-xs);
 			}
 
