@@ -1,7 +1,7 @@
 import { PlElement, html, css } from "polylib";
 
 class PlLabeledContainer extends PlElement {
-    static propertie = {
+    static properties = {
         label: { type: String },
         orientation: { type: String, reflectToAttribute: true, value: 'vertical' },
         contentWidth: { type: Number, observer: '_contentWidthObserver' },
