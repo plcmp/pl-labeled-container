@@ -20,6 +20,7 @@ class PlLabeledContainer extends PlElement {
             flex-shrink: 0;
             width: var(--content-width);
             row-gap: var(--space-xs);
+            max-width: 100%;
         }
 
         :host([orientation=horizontal]) {
