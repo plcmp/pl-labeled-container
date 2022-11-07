@@ -29,11 +29,9 @@ class PlLabeledContainer extends PlElement {
         }
 
         label {
-            display: flex;
             user-select: none;
             font: var(--header-font);
             color: var(--header-color);
-            flex-shrink: 0;
         }
 
         label[hidden]{
