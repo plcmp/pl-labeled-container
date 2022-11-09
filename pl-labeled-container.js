@@ -13,14 +13,11 @@ class PlLabeledContainer extends PlElement {
             display: flex;
             flex-direction: column;
             box-sizing: border-box;
-            direction: var(--direction);
             align-items: flex-start;
             outline: none;
             min-height: var(--base-size-md);
-            flex-shrink: 0;
             width: var(--content-width);
             row-gap: var(--space-xs);
-            max-width: 100%;
         }
 
         :host([orientation=horizontal]) {
@@ -29,6 +26,7 @@ class PlLabeledContainer extends PlElement {
         }
 
         label {
+            display: flex;
             user-select: none;
             font: var(--header-font);
             color: var(--header-color);
@@ -58,9 +56,6 @@ class PlLabeledContainer extends PlElement {
             text-overflow: ellipsis;
         }
 
-        :host([orientation=vertical]) label span{
-            width: var(--content-width, 240px);
-        }
     `;
 
     static template = html`
