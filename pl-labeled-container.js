@@ -18,6 +18,7 @@ class PlLabeledContainer extends PlElement {
             min-height: var(--base-size-md);
             width: var(--content-width);
             row-gap: var(--space-xs);
+            max-width: 100%;
             flex-shrink: 0;
         }
 
@@ -57,7 +58,6 @@ class PlLabeledContainer extends PlElement {
             -webkit-line-clamp: 2;
             text-overflow: ellipsis;
         }
-
     `;
 
     static template = html`
