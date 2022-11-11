@@ -1,6 +1,6 @@
 {
     "name": "@plcmp/pl-labeled-container",
-    "version": "0.1.12",
+    "version": "0.1.13",
     "description": "Container for inputs and texts with label.",
     "main": "pl-labeled-container.js",
     "repository": {
