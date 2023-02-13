@@ -25,6 +25,7 @@ class PlLabeledContainer extends PlElement {
         :host([orientation=horizontal]) {
             flex-direction: row;
             width: calc(var(--label-width) + var(--content-width));
+            align-items: center;
         }
 
         label {
@@ -47,6 +48,7 @@ class PlLabeledContainer extends PlElement {
             width: var(--label-width, 240px);
             min-height: var(--base-size-md);
             flex-shrink: 0;
+            align-self: flex-start;
         }
 
         :host([orientation=horizontal]) label span{ 
