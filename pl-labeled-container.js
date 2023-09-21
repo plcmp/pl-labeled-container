@@ -64,7 +64,7 @@ class PlLabeledContainer extends PlElement {
     `;
 
     static template = html`
-        <label title$="[[label]]" hidden="[[!label]]">
+        <label part="label" title$="[[label]]" hidden="[[!label]]">
             <slot name="label-prefix"></slot>
             <span>[[label]]</span>
             <slot name="label-suffix"></slot>
