@@ -15,24 +15,24 @@ class PlLabeledContainer extends PlElement {
             box-sizing: border-box;
             align-items: flex-start;
             outline: none;
-            min-height: var(--base-size-md);
-            width: var(--content-width);
-            row-gap: var(--space-xs);
+            min-height: var(--pl-base-size);
+            width: var(--pl-content-width);
+            row-gap: var(--pl-space-xs);
             max-width: 100%;
             flex-shrink: 0;
         }
 
         :host([orientation=horizontal]) {
             flex-direction: row;
-            width: calc(var(--label-width) + var(--content-width));
+            width: calc(var(--pl-label-width) + var(--pl-content-width));
             align-items: center;
         }
 
         label {
             display: flex;
             user-select: none;
-            font: var(--header-font);
-            color: var(--header-color);
+            font: var(--pl-header-font);
+            color: var(--pl-header-color);
         }
 
         label[hidden]{
@@ -45,8 +45,8 @@ class PlLabeledContainer extends PlElement {
         }
 
         :host([orientation=horizontal]) label{
-            width: var(--label-width, 240px);
-            min-height: var(--base-size-md);
+            width: var(--pl-label-width, 240px);
+            min-height: var(--pl-base-size);
             flex-shrink: 0;
             align-self: flex-start;
             text-align: start;
@@ -76,27 +76,27 @@ class PlLabeledContainer extends PlElement {
         super.connectedCallback()
 
         if (!this.label) {
-            this.style.setProperty('--label-width', '0px');
+            this.style.setProperty('--pl-label-width', '0px');
         }
 
         if (this.contentWidth) {
-            this.style.setProperty('--content-width', this.contentWidth + 'px');
+            this.style.setProperty('--pl-content-width', this.contentWidth + 'px');
         }
 
         if (this.labelWidth) {
-            this.style.setProperty('--label-width', this.labelWidth + 'px');
+            this.style.setProperty('--pl-label-width', this.labelWidth + 'px');
         }
     }
 
     _contentWidthObserver() {
         if (this.contentWidth) {
-            this.style.setProperty('--content-width', this.contentWidth + 'px');
+            this.style.setProperty('--pl-content-width', this.contentWidth + 'px');
         }
     }
 
     _labelWidthObserver() {
         if (this.labelWidth) {
-            this.style.setProperty('--label-width', this.labelWidth + 'px');
+            this.style.setProperty('--pl-label-width', this.labelWidth + 'px');
         }
     }
 }
